@@ -23,11 +23,8 @@ ext {
 }
 
 dependencies {
-	implementation 'org.springframework.cloud:spring-cloud-cloudfoundry-discovery'
-	implementation 'org.springframework.cloud:spring-cloud-starter-consul-discovery'
-	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
-	implementation 'org.springframework.cloud:spring-cloud-starter-zookeeper-discovery'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
