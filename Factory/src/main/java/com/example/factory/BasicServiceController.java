@@ -8,9 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BasicServiceController {
 
-
     BasicService service;
-
 
     @GetMapping(path="/greeting")
     public String greeting(){
