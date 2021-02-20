@@ -20,12 +20,20 @@ public class BasicServiceFactoryController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
-    private BasicService firstService;
-    private BasicService secondService;
-    private BasicService thirdService;
+    private static BasicService firstService;
+    private static BasicService secondService;
+    private static BasicService thirdService;
 
-    @GetMapping(path="/addBasicService")
-    public String greeting(@RequestParam(name="name",defaultValue="User")String name){
+    @GetMapping(path="/addFirstService")
+    public String addFirstService(@RequestParam(name="service",defaultValue="service1")String service){
+
+
+        return "";
+    }
+
+
+    @GetMapping(path="/act")
+    public String showResponse(@RequestParam(name="name",defaultValue="User")String name){
       BasicServiceFactory factory = new BasicServiceFactory();
       int counter = 0;
 
@@ -55,6 +63,8 @@ public class BasicServiceFactoryController {
 
      return "Service mit Id "+counter+" wurde erstellt";
     }
+
+
 
 @RequestMapping("/service-instances/{applicationName}")
     public List<ServiceInstance> serviceInstancesByApplicationName(@PathVariable String applicationName){

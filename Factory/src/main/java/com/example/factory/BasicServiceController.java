@@ -11,8 +11,8 @@ public class BasicServiceController {
     BasicService service;
 
 
-    @GetMapping(path="/greeting")
-    public String greeting(){
+    @GetMapping(path="/response")
+    public String showResponse(){
      return service.getName();
     }
 }
