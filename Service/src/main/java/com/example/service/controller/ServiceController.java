@@ -5,6 +5,8 @@ import com.example.service.view.ServiceView;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,12 +16,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ServiceController {
 
+@Value("${random.value}")
+private String randomValue;
+
 @Autowired
     ServiceView<JsonNode> view;
 
 @GetMapping(path="/greeting")
     public String greeting(@RequestParam(name="name",defaultValue="User")String name){
-    return view.greeting(name);
+    return view.greeting(name)+" from Server with random Value "+randomValue;
 }
 
 @PostMapping(path = "/greetingJson",
