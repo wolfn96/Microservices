@@ -33,7 +33,7 @@ private ApplicationContext appContext;
 
 @GetMapping(path="/greeting")
     public String greeting(@RequestParam(name="name",defaultValue="User")String name){
-    return view.greeting(name)+" from Server with random Value "+randomValue;
+    return view.greeting(name)+" from Service with random Value "+randomValue;
 }
 
 @GetMapping(path="/shutdown")
