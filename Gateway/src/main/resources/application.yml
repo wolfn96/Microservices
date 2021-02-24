@@ -1,10 +1,13 @@
+# Name des Microservices
 spring:
   application:
     name: "Zuul-Gateway"
 
+# Port des Microservices
 server:
   port: 9090
 
+# Eureka-Einstellungen, um sich bei dem Discovery-Service zu registrieren
 eureka:
   client:
     register-with-eureka: true
@@ -13,7 +16,7 @@ eureka:
   instance:
     prefer-ip-address: true
 
-
+# Hier wird die Route für die HelloWorld-Services spezifiziert, damit das Gateway bei Aufruf der URL eine Lastenverteilung im Round-Robin-Verfahren durchführen kann
 zuul:
   routes:
     helloWorld:
